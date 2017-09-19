@@ -27,7 +27,7 @@ import org.json.JSONObject;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class MainActivity extends AppCompatActivity {
+public class FbActivity extends AppCompatActivity {
 
     private LoginButton loginButton;
     private CallbackManager callbackManager;
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancel() {
-                Toast.makeText(MainActivity.this, "Cancelled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FbActivity.this, "Cancelled", Toast.LENGTH_SHORT).show();
                 Log.i("mmm onCancel", "onCancel");
                 // App code
             }
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject profile_pic_url = new JSONObject(profile_pic_data.getString("data"));
                     Log.i("mmm profile_pic ", "" + profile_pic_url.getString("url"));
                     if (!profile_pic_url.getString("url").equalsIgnoreCase("")) {
-                        Picasso.with(MainActivity.this).load(profile_pic_url.getString("url")).into(img);
+                        Picasso.with(FbActivity.this).load(profile_pic_url.getString("url")).into(img);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

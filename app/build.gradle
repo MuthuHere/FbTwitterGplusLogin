@@ -32,5 +32,11 @@ dependencies {
 
 
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.twitter.sdk.android:twitter:3.1.1'
+    compile 'com.twitter.sdk.android:twitter-core:3.1.1'
+/*    compile 'com.twitter.sdk.android:twitter-mopub:3.1.1'
+    compile 'com.twitter.sdk.android:tweet-ui:3.1.1'
+    compile 'com.twitter.sdk.android:tweet-composer:3.1.1'*/
+
 
 }
