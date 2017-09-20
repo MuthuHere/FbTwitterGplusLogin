@@ -26,9 +26,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class GooglePlusActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
-
     private GoogleApiClient mGoogleApiClient;
-    private final int RC_SIGN_IN = 0120;
+    private final int RC_SIGN_IN = 80;
     private ImageView imgProfilePic;
     private TextView txtName, txtEmail;
 
@@ -37,12 +36,9 @@ public class GooglePlusActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_plus);
 
-
         imgProfilePic = (ImageView) findViewById(R.id.imgProfilePic);
         txtName = (TextView) findViewById(R.id.txtName);
         txtEmail = (TextView) findViewById(R.id.txtEmail);
-
-
         setTitle("Google Plus");
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -51,32 +47,22 @@ public class GooglePlusActivity extends AppCompatActivity implements View.OnClic
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-
-
         // Set the dimensions of the sign-in button.
         SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
-
         findViewById(R.id.sign_in_button).setOnClickListener(this);
-
-
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
                 signIn();
                 break;
-            // ...
         }
     }
-
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
@@ -90,11 +76,8 @@ public class GooglePlusActivity extends AppCompatActivity implements View.OnClic
             assert acct != null;
             String userName = acct.getDisplayName();
             String strEmail = acct.getEmail();
-
             txtEmail.setText(strEmail);
             txtName.setText(userName);
-
-
             Uri strImageURL = null;
             try {
                 strImageURL = acct.getPhotoUrl();
@@ -108,17 +91,13 @@ public class GooglePlusActivity extends AppCompatActivity implements View.OnClic
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .into(imgProfilePic);
             }
-
         }
     }
-
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
     }
 }
