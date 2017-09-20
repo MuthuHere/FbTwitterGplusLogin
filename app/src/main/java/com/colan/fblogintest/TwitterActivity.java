@@ -42,6 +42,9 @@ public class TwitterActivity extends AppCompatActivity {
         Twitter.initialize(this);
         setContentView(R.layout.activity_twitter);
 
+
+        setTitle("Twitter");
+
         img = (ImageView) findViewById(R.id.img);
         txtName = (TextView) findViewById(R.id.txtName);
         txtEmail = (TextView) findViewById(R.id.txtEmail);

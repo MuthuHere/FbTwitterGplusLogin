@@ -29,7 +29,6 @@ import java.security.NoSuchAlgorithmException;
 
 public class FbActivity extends AppCompatActivity {
 
-    private LoginButton loginButton;
     private CallbackManager callbackManager;
     private ImageView img;
     private TextView txtName;
@@ -40,6 +39,8 @@ public class FbActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setTitle("Facebook");
 
 //  The following things are deprecated  with the newer facebook sdk
         /*The Facebook SDK is now auto initialized on Application start.
@@ -58,7 +59,7 @@ public class FbActivity extends AppCompatActivity {
 //        getKeyHash();
 
         callbackManager = CallbackManager.Factory.create();
-        loginButton = (LoginButton) findViewById(R.id.login_button);
+        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         img = (ImageView) findViewById(R.id.img);
         loginButton.setReadPermissions("email");
         loginButton.setReadPermissions("user_friends");

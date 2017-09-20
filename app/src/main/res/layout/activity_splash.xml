@@ -30,5 +30,16 @@
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnFB" />
 
+    <Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/ic_google"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTwitter" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -13,7 +13,7 @@ import android.widget.Button;
 
 public class SplashActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnFB, btnTwitter;
+    private Button btnFB, btnTwitter,btnGoogle;
     private Intent intent;
 
     @Override
@@ -23,9 +23,11 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
 
         btnFB = (Button) findViewById(R.id.btnFB);
         btnTwitter = (Button) findViewById(R.id.btnTwitter);
+        btnGoogle = (Button) findViewById(R.id.btnGoogle);
 
         btnFB.setOnClickListener(this);
         btnTwitter.setOnClickListener(this);
+        btnGoogle.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +41,10 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
             break;
             case R.id.btnTwitter: {
                 intent = new Intent(this, TwitterActivity.class);
+            }
+            break;
+            case R.id.btnGoogle: {
+                intent = new Intent(this, GooglePlusActivity.class);
             }
             break;
         }
