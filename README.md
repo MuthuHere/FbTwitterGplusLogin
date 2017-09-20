@@ -5,7 +5,7 @@ In MainActivity i commended the following lines. These are the depricated one
 ###  The following things are deprecated  with the newer facebook sdk
   ####     The Facebook SDK is now auto initialized on Application start.
   ####      If you are using the Facebook SDK in the main process and don't need a callback on SDK initialization completion you can now remove calls to FacebookSDK.sdkInitialize.
-    ####    If you do need a callback, you should manually invoke the callback in your code.
+    ###  If you do need a callback, you should manually invoke the callback in your code.
    ####     Refer to: https://developers.facebook.com/docs/android/upgrading-4x
       
 
